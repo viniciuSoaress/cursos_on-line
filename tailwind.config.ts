@@ -15,7 +15,8 @@ const config: Config = {
     fontSize: {
       'min': '16px',
       'larg': '26px',
-      'larg2': '32px'
+      'larg2': '32px',
+      'min2' : '20px',
     },
     extend: {
       backgroundImage: {

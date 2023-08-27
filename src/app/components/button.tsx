@@ -13,7 +13,7 @@ export function Button({
   return (
     <>
       <button onClick={onClick}
-        className="py-2 px-6 bg-thee rounded-xl text-min w-60 font-bold text-black"
+        className="py-2 px-6 bg-thee rounded-xl text-min w-52 font-bold text-black"
       >
         {children}
       </button>
