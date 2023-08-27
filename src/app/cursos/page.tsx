@@ -1,25 +1,19 @@
 'use client'
 
-import { useState } from "react"
-import { Conteiner, Section, Curso } from "../components"
+import { useCurso } from "../hooks/useCurso"
+import { Conteiner, Section, Curso, Button } from "../components"
+import Link from "next/link"
 
 import { array } from "../utils/array"
 
 
 export default function Cursos() {
 
-  const [isCurso, setIsCurso] = useState(false)
-  const [curs, setCurs] = useState({id: 0, name: '', info: ''})
+  const { curs, handleIsCurso, isCurso, setIsCurso } = useCurso()
 
-  function handleIsCurso(c: {id: number, name: string, info: string}) {
-    setIsCurso(is => !is)
-    setCurs({
-      id: c.id,
-      info: c.info,
-      name: c.name
-    })
+  if (isCurso) {
+    return <Curso key={curs.id} curso={curs} onClose={() => setIsCurso(is => !is)} />
   }
-
 
   return (
     <Conteiner.Root>
@@ -28,14 +22,24 @@ export default function Cursos() {
         Cursos page
       </Conteiner.Tilte>
 
-      <Section.Root>
-        {array.map(obj => (
-          <>
-            <Section.Card onClick={() => handleIsCurso(obj)} key={obj.id} title={obj.name} description={obj.info} />
-          </>
-        ))}
-        {isCurso && <Curso curso={curs} />}
-      </Section.Root>
+      <Conteiner.Content>
+        <Section.Root>
+          {array.map(obj => (
+            <Section.Card
+              key={obj.id}
+              onClick={() => handleIsCurso(obj)}
+              title={obj.name}
+              description={obj.info}
+            />
+          ))}
+        </Section.Root>
+      </Conteiner.Content>
+
+      <Conteiner.Footer>
+        <Button>
+          <Link href='/'>Inicio</Link>
+        </Button>
+      </Conteiner.Footer>
 
     </Conteiner.Root>
   )

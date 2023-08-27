@@ -1,6 +1,12 @@
 
 
-export const array = [
+export type ArrayProps = {
+  id: number,
+  name: string,
+  info: string
+}
+
+export const array: ArrayProps[] = [
   {
     id: 0,
     name: 'analise de dados',
@@ -10,5 +16,5 @@ export const array = [
     id: 1,
     name: 'engenharia de softwars',
     info: 'aprenda a arquitetar melhor os sues aplicativos'
-  }
+  },
 ]

@@ -1,11 +1,33 @@
+'use client'
+
+import { Button, Conteiner, Form } from "../components";
 
 
 
-export default function Inscricao(){
+export default function Inscricao() {
 
-  return(
-    <>
-      <h1>iscricao page</h1>
-    </>
+  return (
+    <Conteiner.Root>
+
+      <Conteiner.Tilte>
+        Inscrição
+      </Conteiner.Tilte>
+
+      <Conteiner.Content>
+        <Form.Input
+          name="ola"
+          value='ola'
+          onChange={(e) => console.log(e.target.value)}
+          placeholder="ikkkkkkk"
+        />
+      </Conteiner.Content>
+
+      <Conteiner.Footer>
+        <Button>
+          Concluir
+        </Button>
+      </Conteiner.Footer>
+
+    </Conteiner.Root>
   )
 }

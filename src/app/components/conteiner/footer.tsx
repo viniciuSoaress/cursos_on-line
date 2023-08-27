@@ -9,7 +9,7 @@ export function ConteinerFooter(
   { children }: ConteinerFooterProps
 ) {
   return (
-    <footer className="flex justify-end flex-col items-end gap-5">
+    <footer className="flex justify-center flex-wrap items-end gap-5">
       {children}
     </footer>
   )

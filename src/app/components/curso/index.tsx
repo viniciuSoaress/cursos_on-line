@@ -1,17 +1,37 @@
-import { Conteiner } from "..";
+import { Button, Conteiner } from "..";
+import Link from "next/link";
 
 type CursoProps = {
   curso: {
-  id: number;
-  name: string;
-  info: string;
-}}
+    id: number;
+    name: string;
+    info: string;
+  },
+  onClose: () => void
+}
 
-export function Curso({curso}: CursoProps) {
+export function Curso({ curso, onClose }: CursoProps) {
 
   return (
-    <div className="z-10 absolute top-0 bg-second w-full h-full left-0">
-      <h2>{curso.name}</h2>
-    </div>
+    <Conteiner.Root>
+
+      <Conteiner.Tilte>
+        {curso.name}
+      </Conteiner.Tilte>
+
+      <Conteiner.Content>
+      {curso.info}
+      </Conteiner.Content>
+
+      <Conteiner.Footer>
+        <Button>
+          <Link href='/inscricao'>increva-se</Link>
+        </Button>
+
+        <Button onClick={onClose}>
+          voltar
+        </Button>
+      </Conteiner.Footer>
+    </Conteiner.Root>
   )
 }
