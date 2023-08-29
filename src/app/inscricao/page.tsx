@@ -1,6 +1,7 @@
 'use client'
 
 import { Button, Conteiner, Form } from "../components";
+import { currs, modalidade } from "../utils"
 
 
 
@@ -14,20 +15,20 @@ export default function Inscricao() {
       </Conteiner.Tilte>
 
       <Conteiner.Content>
-        <div>
+        <Form.Content>
 
           <Form.Input
             id="name"
             name="name"
             value=''
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => alert(e.target.value)}
             placeholder="Digite seu nome"
           />
           <Form.Input
             id="sobrename"
             name="sobrename"
             value=''
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => alert(e.target.value)}
             placeholder="Digite seu sobrenome"
           />
 
@@ -36,23 +37,25 @@ export default function Inscricao() {
             name="email"
             value=''
             type="email"
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => alert(e.target.value)}
             placeholder="Digite seu e-mail"
           />
 
           <Form.Select
-            id="aa"
+            id="curso"
             name="cursos"
+            array={currs}
             onChange={(e) => alert(e.target.value)}
             value=''
           />
           <Form.Select
-            id="aa"
-            name="cursos"
+            id="modalidade"
+            name="modalidade"
+            array={modalidade}
             onChange={(e) => alert(e.target.value)}
             value=''
           />
-        </div>
+        </Form.Content>
 
         
       </Conteiner.Content>

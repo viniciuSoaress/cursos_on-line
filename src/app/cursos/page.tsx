@@ -4,7 +4,7 @@ import { useCurso } from "../hooks/useCurso"
 import { Conteiner, Section, Curso, Button } from "../components"
 import Link from "next/link"
 
-import { array } from "../utils/array"
+import { array, currs } from "../utils"
 
 
 export default function Cursos() {
@@ -23,6 +23,7 @@ export default function Cursos() {
       </Conteiner.Tilte>
 
       <Conteiner.Content>
+        
         <Section.Root>
           {array.map(obj => (
             <Section.Card
@@ -33,6 +34,7 @@ export default function Cursos() {
             />
           ))}
         </Section.Root>
+        
       </Conteiner.Content>
 
       <Conteiner.Footer>
