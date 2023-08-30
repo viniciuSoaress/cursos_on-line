@@ -1,11 +1,28 @@
 'use client'
 
-import { Button, Conteiner, Form } from "../components";
-import { currs, modalidade } from "../utils"
 
+import { useState } from "react";
+import { Button, Conteiner, Form, Inscri } from "../components";
+import { useInscricao } from "../hooks/useInscricao";
+import { currs, modalidade } from "../utils";
 
 
 export default function Inscricao() {
+
+  const [isIn, setIsIn] = useState(false)
+  const { matricular, handleAddDado, handleInputChange, handleSelectChange } = useInscricao()
+
+  if (isIn) {
+    return (
+      <Inscri key={matricular?.email}
+        curso={matricular?.curso}
+        email={matricular?.email}
+        firstname={matricular?.firstname}
+        lastName={matricular?.lastName}
+        modalidade={matricular?.modalidade}
+      />
+    )
+  }
 
   return (
     <Conteiner.Root>
@@ -15,29 +32,30 @@ export default function Inscricao() {
       </Conteiner.Tilte>
 
       <Conteiner.Content>
+
         <Form.Content>
 
           <Form.Input
             id="name"
             name="name"
-            value=''
-            onChange={(e) => alert(e.target.value)}
+            value={matricular.firstname}
+            onChange={(e) => handleInputChange(e, 'firstname')}
             placeholder="Digite seu nome"
           />
           <Form.Input
             id="sobrename"
             name="sobrename"
-            value=''
-            onChange={(e) => alert(e.target.value)}
+            value={matricular.lastName}
+            onChange={(e) => handleInputChange(e, 'lastName')}
             placeholder="Digite seu sobrenome"
           />
 
           <Form.Input
             id="email"
             name="email"
-            value=''
+            value={matricular.email}
             type="email"
-            onChange={(e) => alert(e.target.value)}
+            onChange={(e) => handleInputChange(e, 'email')}
             placeholder="Digite seu e-mail"
           />
 
@@ -45,23 +63,25 @@ export default function Inscricao() {
             id="curso"
             name="cursos"
             array={currs}
-            onChange={(e) => alert(e.target.value)}
-            value=''
+            onChange={(e) => handleSelectChange(e, 'curso')}
+            value={matricular.curso}
           />
           <Form.Select
             id="modalidade"
             name="modalidade"
             array={modalidade}
-            onChange={(e) => alert(e.target.value)}
-            value=''
+            onChange={(e) => handleSelectChange(e, 'modalidade')}
+            value={matricular.modalidade}
           />
         </Form.Content>
 
-        
       </Conteiner.Content>
 
       <Conteiner.Footer>
-        <Button >
+        <Button onClick={() => {
+          setIsIn(true)
+          handleAddDado(matricular)
+        }}>
           Concluir
         </Button>
       </Conteiner.Footer>

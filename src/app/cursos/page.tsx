@@ -4,7 +4,7 @@ import { useCurso } from "../hooks/useCurso"
 import { Conteiner, Section, Curso, Button } from "../components"
 import Link from "next/link"
 
-import { array, currs } from "../utils"
+import { array } from "../utils"
 
 
 export default function Cursos() {

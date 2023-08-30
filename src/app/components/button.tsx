@@ -1,3 +1,10 @@
+type Matricular = {
+  firstname: string,
+  lastName: string,
+  email: string,
+  curso: string,
+  modalidade: string,
+}
 
 type ButtonProps = {
   children: React.ReactNode,
@@ -5,9 +12,9 @@ type ButtonProps = {
 }
 
 export function Button({
-    children,
-    onClick
-  }: ButtonProps
+  children,
+  onClick
+}: ButtonProps
 ) {
 
   return (
