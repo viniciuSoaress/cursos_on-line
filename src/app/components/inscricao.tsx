@@ -2,20 +2,16 @@ import { Button, Conteiner } from ".";
 import Link from "next/link";
 
 type InscriProps = {
-  firstname: string,
+ dados: { firstname: string,
   lastName: string,
   email: string,
   curso: string,
-  modalidade: string,
+  modalidade: string,}
 }
 
 
 export function Inscri({
-  curso = '',
-  email = '',
-  firstname = '',
-  lastName = '',
-  modalidade = '',
+  dados
 }: InscriProps) {
 
   return (
@@ -26,7 +22,7 @@ export function Inscri({
       </Conteiner.Tilte>
 
       <Conteiner.Content>
-        <h2>ola {firstname +' ' + lastName} sua matricular esta concluida</h2>
+        <h2>ola {dados.firstname +' ' + dados.lastName} sua matricular esta concluida</h2>
         <p>informações do curso :</p>
 
       </Conteiner.Content>

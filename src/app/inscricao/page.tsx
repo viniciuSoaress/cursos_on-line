@@ -1,7 +1,5 @@
 'use client'
 
-
-import { useState } from "react";
 import { Button, Conteiner, Form, Inscri } from "../components";
 import { useInscricao } from "../hooks/useInscricao";
 import { currs, modalidade } from "../utils";
@@ -9,17 +7,12 @@ import { currs, modalidade } from "../utils";
 
 export default function Inscricao() {
 
-  const [isIn, setIsIn] = useState(false)
-  const { matricular, handleAddDado, handleInputChange, handleSelectChange } = useInscricao()
+  const { matricular, handleAddDado, handleInputChange, handleSelectChange, isIn } = useInscricao()
 
   if (isIn) {
     return (
       <Inscri key={matricular?.email}
-        curso={matricular?.curso}
-        email={matricular?.email}
-        firstname={matricular?.firstname}
-        lastName={matricular?.lastName}
-        modalidade={matricular?.modalidade}
+        dados={matricular}
       />
     )
   }
@@ -78,10 +71,7 @@ export default function Inscricao() {
       </Conteiner.Content>
 
       <Conteiner.Footer>
-        <Button onClick={() => {
-          setIsIn(true)
-          handleAddDado(matricular)
-        }}>
+        <Button onClick={() => handleAddDado(matricular)}>
           Concluir
         </Button>
       </Conteiner.Footer>
