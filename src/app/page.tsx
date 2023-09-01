@@ -1,9 +1,10 @@
 import Link from 'next/link'
-import { Conteiner, Button } from './components'
+import { Conteiner, Button, Carrossel } from './components'
+
 
 export default function Home() {
 
-  
+
 
   return (
     <Conteiner.Root>
@@ -12,18 +13,15 @@ export default function Home() {
 
       <Conteiner.Content>
 
-        <div className='flex-1'>
-          <h2 className='text-larg font-semibold'>oque somos </h2>
-          <p>Lorem ipsum dolor .</p>
+        <div className='flex-1 sm:border-r mt-24 sm:mt-0'>
+          <h2 className='text-larg font-semibold'>TI Estudos</h2>
+          <p className='pl-3'>Aqui vocé encontra os melhores cursors, para ajudar a acelerar sua careirar na area de <strong>ti</strong>.</p>
         </div>
 
-        <div className='border-l w-1 h-4/5'/>
+        {/* <div className='border-l w-1 h-4/5' /> */}
 
-        <div className=''>
-         <p> pra para todos so</p>
-         <p> pra para todos so</p>
-         <p> pra para todos so</p>
-         <p> pra para todos so</p>
+        <div className='mb-24 sm:mb-0'>
+          <Carrossel />
         </div>
 
       </Conteiner.Content>

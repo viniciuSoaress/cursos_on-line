@@ -1,5 +1,6 @@
 'use client'
 
+import Link from "next/link";
 import { Button, Conteiner, Form, Inscri } from "../components";
 import { useInscricao } from "../hooks/useInscricao";
 import { currs, modalidade } from "../utils";
@@ -71,6 +72,9 @@ export default function Inscricao() {
       </Conteiner.Content>
 
       <Conteiner.Footer>
+        <Button>
+          <Link href='/'>Inicio </Link>
+        </Button>
         <Button onClick={() => handleAddDado(matricular)}>
           Concluir
         </Button>

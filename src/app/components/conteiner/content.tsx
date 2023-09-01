@@ -10,7 +10,7 @@ export function ConteinerContent(
 ) {
 
   return(
-    <div className="flex-1 flex py-8 justify-between items-center gap-5">
+    <div className="flex-1 flex flex-col sm:flex-row  py-8 justify-between items-center gap-5">
       {children}
     </div>
   )
