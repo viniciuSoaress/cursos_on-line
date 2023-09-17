@@ -3,7 +3,7 @@
 type SectionCardProps = {
   title: string,
   description: string,
-  onClick: () => void,
+  onClick?: () => void,
 }
 
 export function SectionCard({
@@ -14,7 +14,8 @@ export function SectionCard({
 ) {
 
   return(
-    <div onClick={onClick}
+    <div
+     onClick={onClick}
      className="flex flex-col gap-1 w-[280px] h-32 bg-second pt-2 px-4 pb-6 rounded-lg cursor-pointer"
      >
       <h2 className="font-semibold text-min2">{title}</h2>

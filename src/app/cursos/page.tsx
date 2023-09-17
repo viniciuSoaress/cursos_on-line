@@ -1,19 +1,19 @@
-'use client'
 
-import { useCurso } from "../hooks/useCurso"
-import { Conteiner, Section, Curso, Button } from "../components"
+import { Conteiner, Section, Button } from "../components"
 import Link from "next/link"
 
 import { array } from "../utils"
 
+export async function getProjects(){
+  return array
+}
 
-export default function Cursos() {
 
-  const { curs, handleIsCurso, isCurso, setIsCurso } = useCurso()
+export default async function Cursos() {
 
-  if (isCurso) {
-    return <Curso key={curs.id} curso={curs} onClose={() => setIsCurso(is => !is)} />
-  }
+  const cursos = await getProjects()
+
+ 
 
   return (
     <Conteiner.Root>
@@ -25,13 +25,14 @@ export default function Cursos() {
       <Conteiner.Content>
         
         <Section.Root>
-          {array.map(obj => (
+          {cursos.map(obj => (
+            <Link href={`/cursos/${obj.id}`}>
             <Section.Card
               key={obj.id}
-              onClick={() => handleIsCurso(obj)}
               title={obj.name}
               description={obj.info}
-            />
+              />
+              </Link>
           ))}
         </Section.Root>
         

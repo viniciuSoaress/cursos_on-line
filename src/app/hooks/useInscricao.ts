@@ -4,7 +4,7 @@ import { ChangeEvent, useState } from "react"
 
 
 type Matricular = {
-  firstname: string,
+  firstName: string,
   lastName: string,
   email: string,
   curso: string,
@@ -14,7 +14,7 @@ type Matricular = {
 const matri: Matricular = {
   curso: '',
   email: '',
-  firstname: '',
+  firstName: '',
   lastName: '',
   modalidade: '',
 }
@@ -49,7 +49,7 @@ export function useInscricao() {
 
   function handleAddDado(dado: Matricular) {
 
-    if (matricular.firstname.length < 3 || matricular.lastName.length < 3) {
+    if (matricular.firstName.length < 3 || matricular.lastName.length < 3) {
       alert('nome deve conter mais de tres letras')
       return
     }

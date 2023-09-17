@@ -14,7 +14,7 @@ export function Carrossel() {
 
     const interval = setInterval(() => {
       setIndex((i) => (i + 1) % array.length)
-    }, 2000)
+    }, 2500)
 
     return () => {
       clearInterval(interval)

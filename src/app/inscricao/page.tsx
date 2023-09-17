@@ -32,8 +32,8 @@ export default function Inscricao() {
           <Form.Input
             id="name"
             name="name"
-            value={matricular.firstname}
-            onChange={(e) => handleInputChange(e, 'firstname')}
+            value={matricular.firstName}
+            onChange={(e) => handleInputChange(e, 'firstName')}
             placeholder="Digite seu nome"
           />
           <Form.Input
