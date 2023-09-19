@@ -4,14 +4,14 @@ import Link from "next/link"
 
 import { array } from "../utils"
 
-export async function getProjects(){
+export async function getPost(){
   return array
 }
 
 
 export default async function Cursos() {
 
-  const cursos = await getProjects()
+  const cursos = await getPost()
 
  
 

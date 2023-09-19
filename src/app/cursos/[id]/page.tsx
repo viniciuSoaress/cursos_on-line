@@ -2,12 +2,13 @@ import { Button, Conteiner } from '@/app/components'
 import { array } from '../../utils'
 import Link from 'next/link'
 
-export async function genereteStaticParams() {
+export async function generateStaticParams() {
   return array.map((data) => ({
     params: {
       id: String(data.id)
     }
   }))
+  
 }
 
 
