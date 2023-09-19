@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 
-export async function getProjects({ id }: { id: string }) {
+export async function getPost({ id }: { id: string }) {
   return array[Number(id)]
 }
 
@@ -22,7 +22,7 @@ export default async function dataId({
   params: { id: string }
 }) {
 
-  const data = await getProjects(params)
+  const data = await getPost(params)
 
   return (
     <Conteiner.Root>
