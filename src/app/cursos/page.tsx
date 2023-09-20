@@ -4,7 +4,7 @@ import Link from "next/link"
 
 import { array } from "../utils"
 
-export async function getPost(){
+async function getPost(){
   return array
 }
 

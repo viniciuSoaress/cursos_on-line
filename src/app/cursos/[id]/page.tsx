@@ -12,8 +12,8 @@ export async function generateStaticParams() {
 }
 
 
-export async function getPost({ id }: { id: string }) {
-  return array[Number(id)]
+async function getPost({ id }: { id: string }) {
+  return array.find((ar) => ar.id === Number(id))
 }
 
 export default async function dataId({
@@ -28,14 +28,14 @@ export default async function dataId({
     <Conteiner.Root>
 
       <Conteiner.Tilte>
-        {data.name}
+        {data?.name}
       </Conteiner.Tilte>
 
       <Conteiner.Content>
         <div>
 
-          <strong>{data.info}</strong>
-          <p className="pl-4 mt-3 w-10/12">{data.description}</p>
+          <strong>{data?.info}</strong>
+          <p className="pl-4 mt-3 w-10/12">{data?.description}</p>
         </div>
       </Conteiner.Content>
 
